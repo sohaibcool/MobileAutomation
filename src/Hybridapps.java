@@ -18,7 +18,9 @@ public class Hybridapps {
 		
 		File appDir = new File("scr");
 		
-		File app = new File(appDir, "testApp.apk");
+		//File app = new File(appDir, "testApp.apk");
+	//	File fs= new File(f,"android-debug_staging.apk");
+		File app = new File(appDir, "android-debug_staging.apk");
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
 		

@@ -11,11 +11,13 @@ public class miscelleanous extends base{
 		// TODO Auto-generated method stub
 		AndroidDriver<AndroidElement> driver = Capabilities();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//driver.findElementByXPath("//android.view.View[@content-desc='Sign in...']").click();
 		System.out.println(driver.currentActivity());
 		System.out.println(driver.getContext());
 		System.out.println(driver.getOrientation());
 		System.out.println(driver.isLocked());
 	//	driver.hideKeyboard();
+		driver.findElementByXPath("//android.view.View[@content-desc='Sign in...']").click();
 		driver.findElementByAndroidUIAutomator("text(\"Views\")").click();
 		driver.pressKeyCode(AndroidKeyCode.BACK);
 	}

@@ -1,0 +1,63 @@
+package SauceLabsTC;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.ios.IOSDriver;
+
+public class sauceConfig {
+
+	public static void main(String[] args) throws MalformedURLException {
+		// TODO Auto-generated method stub 
+/*		DesiredCapabilities dc=DesiredCapabilities.iphone();
+		//for sauce lab use below
+		dc.setCapability("platformName", "iOS");
+		//for IOS safari use below code
+		//cap.setCapability(MobileCapabilityType.PLATFORM_NAME,MobilePlatform.IOS);
+		dc.setCapability("platformVersion", "11.2");
+		//cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"7.1");
+		dc.setCapability("appiumVersion", "1.7");
+		dc.setCapability("deviceName", "iPhone Simulator");
+		dc.setCapability("browserName", "ssafari");*/
+
+		
+		//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		DesiredCapabilities caps = DesiredCapabilities.iphone();
+		caps.setCapability("name", "Xbrowser_invalidaLogin_BTC.com");
+		caps.setCapability("appiumVersion", "1.7.2");
+		caps.setCapability("deviceName","iPhone 8 Simulator");
+		caps.setCapability("deviceOrientation", "portrait");
+		caps.setCapability("platformVersion","11.2");
+		caps.setCapability("platformName", "iOS");
+		caps.setCapability("browserName", "Safari");
+		
+		//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//	dc.setCapability("app","sauce-storage:UICatalog.app.zip");
+		//IOSDriver driver=new IOSDriver(new URL("http://sohaibcool:e950d779-1817-4c3c-b122-06715b814dfd@ondemand.saucelabs.com:80/wd/hub"),dc);
+		IOSDriver driver=new IOSDriver(new URL("http://team_blocktrail:1c59f27f-a5b4-451a-972e-4804e23fb955@ondemand.saucelabs.com:80/wd/hub"),caps);
+		//IOSDriver driver=new IOSDriver(new URL("http://team_blocktrail:1c59f27f-a5b4-451a-972e-4804e23fb955@ondemand.saucelabs.com:80/wd/hub"),dc);	
+	//	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+/*		driver.get("http://btc.com");
+		driver.quit();*/
+		//+++++++++++++++++++++++++++++++++
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		System.out.println("Navigating to Udemy");
+		driver.get("https://udemy.com");
+		System.out.println("Succesfully navigated to Udemy");
+		driver.findElement(By.xpath(".//*[@id='ios-splash']/a")).click();
+		//tagname[@attribute='value']
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("SoapUI");
+		driver.findElement(By.xpath("//button[contains(@class,search-btn)]/i")).click();
+		//System.out.println(driver.getTitle());
+		//*[@id="courses"]/li[1]/a/span[2]
+
+		System.out.println(driver.findElement(By.xpath(".//*[@id='courses']/li[1]/a/span[2]")).getText());
+		}
+//+++++++++++++++++++++++++++++++++++++++++
+		//normal code
+	}

@@ -8,7 +8,7 @@ public class browser extends base2Chrome{
 	public static void main(String[] args) throws MalformedURLException {
 		// TODO Auto-generated method stub
 		AndroidDriver<AndroidElement> driver=Capabilities();
-		driver.get("http://google.com");
+		driver.get("http://wallet.btc.btccom-autotest.blocktrail.com");
 		
 
 	}

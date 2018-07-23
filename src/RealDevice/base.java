@@ -15,7 +15,8 @@ public class base {
 		// TODO Auto-generated method stub
 
 		File f = new File("src");
-		File fs= new File(f,"com.raaga.android_2.0.apk");
+		//File fs= new File(f,"com.raaga.android_2.0.apk");
+		File fs= new File(f,"android-debug1.apk");
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Demo");
